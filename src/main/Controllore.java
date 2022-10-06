@@ -1,5 +1,7 @@
 package main;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 public class Controllore {
@@ -73,13 +75,29 @@ public class Controllore {
 			return false;
 		}	
 	}
-	
+
 	public boolean testDiUnitaLabirintoBuilder() {
-		boolean res=false;
-		
-		
-		
-		return res;
+		Object labBuilderObj = null;
+		Class<?> labBuilderClass = null;
+		try {
+			labBuilderClass=Class.forName("it.uniroma3.diadia.ambienti.LabirintoBuilder");
+			Constructor<?> costruttoreLabBuilder = null;
+			costruttoreLabBuilder = labBuilderClass.getConstructor();
+			labBuilderObj=costruttoreLabBuilder.newInstance();
+			Method addStanzaIniziale = labBuilderClass.getMethod("addStanzaIniziale",String.class);
+			Method addStanzaVincente = labBuilderClass.getMethod("addStanzaVincente",String.class);
+			Method addStanza = labBuilderClass.getMethod("addStanza",String.class);
+			Method addStanzaMagica = labBuilderClass.getMethod("addStanzaMagica", String.class,int.class);
+			Method addStanzaBloccata = labBuilderClass.getMethod("addStanzaBloccata", String.class, String.class, String.class);
+			Method addStanzaBuia = labBuilderClass.getMethod("addStanzaBuia", String.class, String.class);
+			Method addAdiacenza = labBuilderClass.getMethod("addAdiacenza",String.class,String.class,String.class);
+			Method addAttrezzo = labBuilderClass.getMethod("addAttrezzo",String.class,int.class);
+			Method getLabirinto = labBuilderClass.getMethod("getLabirinto");
+		} catch (ClassNotFoundException | NoSuchMethodException | SecurityException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+			e.printStackTrace();
+			return false;
+		}
+		return true;
 	}
 
 }

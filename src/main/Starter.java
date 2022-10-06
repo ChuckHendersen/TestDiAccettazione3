@@ -14,7 +14,7 @@ public class Starter {
         }
         System.out.println("");
         Controllore c = new Controllore();
-		if(c.controlloMetodiBorsa()&&c.esisteLabirintoBuilder()){
+		if(c.testDiUnitaLabirintoBuilder()&&c.controlloMetodiBorsa()&&c.esisteLabirintoBuilder()){
         //terzo argomento: "C:/Users/giovi/workspace2/TestDiAccettazione/test/Features/"
 		io.cucumber.core.cli.Main.main(new String[]{"-g", "classpath:"});
 		}else {
