@@ -17,7 +17,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry combineaccessrules="false" kind="src" path="/DiaDia3"/>
 	<classpathentry kind="lib" path="C:/Users/giovi/Desktop/DiaDiaCucumber/LibrerieCucumber/apiguardian-api-1.1.2.jar"/>
 	<classpathentry kind="lib" path="C:/Users/giovi/Desktop/DiaDiaCucumber/LibrerieCucumber/ci-environment-9.1.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/giovi/Desktop/DiaDiaCucumber/LibrerieCucumber/cucumber-core-7.6.0.jar"/>

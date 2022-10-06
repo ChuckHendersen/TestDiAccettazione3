@@ -76,6 +76,7 @@ public class Controllore {
 		}	
 	}
 
+	@SuppressWarnings("unused")
 	public boolean testDiUnitaLabirintoBuilder() {
 		Object labBuilderObj = null;
 		Class<?> labBuilderClass = null;
@@ -93,8 +94,12 @@ public class Controllore {
 			Method addAdiacenza = labBuilderClass.getMethod("addAdiacenza",String.class,String.class,String.class);
 			Method addAttrezzo = labBuilderClass.getMethod("addAttrezzo",String.class,int.class);
 			Method getLabirinto = labBuilderClass.getMethod("getLabirinto");
+			
+			//CONVERTIRE I TEST DI UNITA'
 		} catch (ClassNotFoundException | NoSuchMethodException | SecurityException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
 			e.printStackTrace();
+			System.out.println("Test di unità per LabirintoBuilder non eseguiti con successo.");
+			System.out.println("Assicurarsi dell'esistenza della classe LabirintoBuilder e che i suoi metodi siano chiamati appropriatamente.");
 			return false;
 		}
 		return true;
