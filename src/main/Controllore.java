@@ -73,6 +73,14 @@ public class Controllore {
 			return false;
 		}	
 	}
+	
+	public boolean testDiUnitaLabirintoBuilder() {
+		boolean res=false;
+		
+		
+		
+		return res;
+	}
 
 }
 
