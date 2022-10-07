@@ -8,9 +8,8 @@ import java.lang.reflect.Method;
 import java.util.LinkedList;
 import java.util.List;
 
+import io.cucumber.java.en.*;
 import it.uniroma3.diadia.*;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
 
 /**
  * Classe adibita alla definizione degli step definiti nel feature file "primeStampe.feature"
