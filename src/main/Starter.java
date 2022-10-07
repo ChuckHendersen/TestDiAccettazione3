@@ -18,7 +18,7 @@ public class Starter {
         //terzo argomento: "C:/Users/giovi/workspace2/TestDiAccettazione/test/Features/"
 		io.cucumber.core.cli.Main.main(new String[]{"-g", "classpath:"});
 		}else{
-			System.out.println("ATTENZIONE! uno o piu' dei controlli prima della consegna "
+		System.out.println("ATTENZIONE! uno o piu' dei controlli prima della consegna "
 					+ "non e' andato a buon fine,\nsistemare gli errori prima di poter avviare "
 					+ "i test di accettazione. Buon lavoro!");
 		}
