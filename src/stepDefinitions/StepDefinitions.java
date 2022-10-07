@@ -57,7 +57,7 @@ public class StepDefinitions {
 		stringa.append("\n================================================\n");
 		return stringa.toString();
 	}
-
+	
 	@Given("il gioco e stato avviato")
 	public void il_gioco_e_stato_avviato() {
 		ioSim.setListaInput(listaInput);
@@ -340,10 +340,10 @@ public class StepDefinitions {
 			addAdiacenza.invoke(labBuilderObj, "stanza vincente", "stanza bloccata", "est");
 			this.threadDiGioco = new Thread(new RunnableDiaDia(ioSim,getLabirinto.invoke(labBuilderObj)));
 		} catch (ClassNotFoundException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException | SecurityException | InstantiationException e) {
+			e.printStackTrace();
 			System.out.println(corniciatore("ERRORE! Non e' possibile costruire un labirinto\n"
 					+ "Possibile causa:\n"
 					+ "Labirinto builder non esiste come classe."));
-			e.printStackTrace();
 		}
 	}
 }
