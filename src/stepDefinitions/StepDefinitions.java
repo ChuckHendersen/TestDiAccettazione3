@@ -324,8 +324,6 @@ public class StepDefinitions {
 			Method addAdiacenza = labBuilderClass.getMethod("addAdiacenza",String.class,String.class,String.class);
 			Method addAttrezzo = labBuilderClass.getMethod("addAttrezzo",String.class,int.class);
 			Method getLabirinto = labBuilderClass.getMethod("getLabirinto");
-			
-
 			addStanzaIniziale.invoke(labBuilderObj,"stanza iniziale");
 			addAttrezzo.invoke(labBuilderObj, "aicrot", 2);
 			addStanzaVincente.invoke(labBuilderObj,"stanza vincente");
@@ -341,7 +339,6 @@ public class StepDefinitions {
 			addAdiacenza.invoke(labBuilderObj, "stanza bloccata", "stanza iniziale", "sud");
 			addAdiacenza.invoke(labBuilderObj, "stanza bloccata", "stanza vincente", "ovest");
 			addAdiacenza.invoke(labBuilderObj, "stanza vincente", "stanza bloccata", "est");
-			
 			this.threadDiGioco = new Thread(new RunnableDiaDia(ioSim,getLabirinto.invoke(labBuilderObj)));
 		} catch (ClassNotFoundException e) {
 			System.out.println(corniciatore("ERRORE! Non e' possibile costruire un labirinto\n"
