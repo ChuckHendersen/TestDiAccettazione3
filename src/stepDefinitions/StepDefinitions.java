@@ -304,7 +304,6 @@ public class StepDefinitions {
 			e.printStackTrace();
 		}
 	}
-
 	@SuppressWarnings("unused")
 	@Given("carico un labirinto completo per testare una partita")
 	public void carico_un_labirinto_completo_per_testare_una_partita(){
@@ -340,22 +339,10 @@ public class StepDefinitions {
 			addAdiacenza.invoke(labBuilderObj, "stanza bloccata", "stanza vincente", "ovest");
 			addAdiacenza.invoke(labBuilderObj, "stanza vincente", "stanza bloccata", "est");
 			this.threadDiGioco = new Thread(new RunnableDiaDia(ioSim,getLabirinto.invoke(labBuilderObj)));
-		} catch (ClassNotFoundException e) {
+		} catch (ClassNotFoundException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException | SecurityException | InstantiationException e) {
 			System.out.println(corniciatore("ERRORE! Non e' possibile costruire un labirinto\n"
 					+ "Possibile causa:\n"
 					+ "Labirinto builder non esiste come classe."));
-			e.printStackTrace();
-		} catch (NoSuchMethodException e) {
-			e.printStackTrace();
-		} catch (SecurityException e) {
-			e.printStackTrace();
-		} catch (InstantiationException e) {
-			e.printStackTrace();
-		} catch (IllegalAccessException e) {
-			e.printStackTrace();
-		} catch (IllegalArgumentException e) {
-			e.printStackTrace();
-		} catch (InvocationTargetException e) {
 			e.printStackTrace();
 		}
 	}
