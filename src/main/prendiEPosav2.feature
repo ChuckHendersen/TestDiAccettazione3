@@ -1,8 +1,6 @@
 #scenario di testing che verifica il funzionamento dei comandi "prendi" e "posa"
 Feature: test di prendi e posa
 
-
-
 	@testPrendiEPosa
 	Scenario: monolocale con attrezzo 
 		Given carico il comando "guarda"

@@ -10,10 +10,8 @@ public class Starter {
 //        for(URL url: urls){
 //        	System.out.println(url.getFile());
 //        }
-        
-        System.out.println("");
         Controllore c = new Controllore();
-		if(c.testDiUnitaLabirintoBuilder()&&c.controlloMetodiBorsa()&&c.esisteLabirintoBuilder()){
+		if(c.testDiUnitaLabirintoBuilder()&&c.esisteLabirintoBuilder()&&c.controlloMetodiBorsa()){
         //terzo argomento: "C:/Users/giovi/workspace2/TestDiAccettazione/test/Features/"
 		System.out.println("Test Preliminari passati con successo.");
 		System.out.println("Test di Accettazione avviati");
