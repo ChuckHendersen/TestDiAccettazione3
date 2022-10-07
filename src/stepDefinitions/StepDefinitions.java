@@ -78,8 +78,6 @@ public class StepDefinitions {
 			stringaDiBenvenuto = ioSim.getOutputList().get(0);
 			for(String stringa:ioSim.getOutputList()) {
 				if(stringa.contains(MESSAGGIO_BENVENUTO)) {
-					System.out.println(
-							corniciatore("TEST: esistenza del messaggio di benvenuto -- PASSATO"));
 					//esiste la stringa di benvenuto all'interno dell stampe di gioco
 					assertTrue(true);
 					return;
@@ -107,8 +105,6 @@ public class StepDefinitions {
 		//Dovrebbe contenere la stringa di benvenuto e quella di arrivederci
 		if(ioSim.getOutputList().get(ioSim.getOutputList().size()-1).contains(MESSAGGIO_ARRIVEDERCI)) {
 			//esiste la stringa di benvenuto all'interno dell stampe di gioco
-			System.out.println(
-					corniciatore("TEST: esistenza del messaggio di arrivederci -- PASSATO"));
 			assertTrue(true);
 			return;
 		}
@@ -123,8 +119,6 @@ public class StepDefinitions {
 	@Then("il gioco si chiude")
 	public void il_gioco_si_chiude() {
 		if(!threadDiGioco.isAlive()) {
-			System.out.println(
-					corniciatore("TEST: il gioco si chiude quando atteso -- PASSATO"));
 			assertTrue(true);
 		}else {
 			System.out.println(corniciatore("ERRORE! Il programma non si chiude quando aspettato\n"
@@ -175,10 +169,6 @@ public class StepDefinitions {
 		}
 		assertTrue(trovataOrigine);
 		assertTrue(trovataDestinazione);
-		if(trovataDestinazione&&trovataOrigine) {
-			System.out.println(
-					corniciatore("TEST: comando vai -- PASSATO"));
-		}
 	}
 
 	@Then("controllo che {string} viene preso e posato")
@@ -236,10 +226,6 @@ public class StepDefinitions {
 			}
 		}
 		assertTrue(condizione); //L'attrezzo è di nuovo presente nella stanza
-		if(condizione) {
-			System.out.println(
-					corniciatore("TEST: comando prendi e comando posa -- PASSATO"));
-		}
 	}
 
 	@Then("viene mostrato il messaggio di morte")
@@ -261,10 +247,6 @@ public class StepDefinitions {
 		}
 
 		assertTrue(trovataParolaChiave);
-		if(trovataParolaChiave) {
-			System.out.println(
-					corniciatore("TEST: esistenza del messaggio di morte -- PASSATO"));
-		}
 	}
 
 	@SuppressWarnings("unused")
@@ -288,8 +270,6 @@ public class StepDefinitions {
 			addStanzaVincente.invoke(labBuilderObj,stanzaDestinazione);
 			addAdiacenza.invoke(labBuilderObj, stanzaOrigine, stanzaDestinazione, direzione);
 			this.threadDiGioco = new Thread(new RunnableDiaDia(ioSim,getLabirinto.invoke(labBuilderObj)));
-			System.out.println(
-					corniciatore("TEST: caricatore di labirinto -- PASSATO"));
 		} catch (ClassNotFoundException e) {
 			System.out.println(corniciatore("ERRORE! Non e' possibile costruire un labirinto\n"
 					+ "Possibile causa:\n"

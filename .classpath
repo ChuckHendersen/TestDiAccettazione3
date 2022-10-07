@@ -2,6 +2,7 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
 		<attributes>
+			<attribute name="module" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
@@ -17,19 +18,20 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/giovi/Desktop/DiaDiaCucumber/LibrerieCucumber/apiguardian-api-1.1.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/giovi/Desktop/DiaDiaCucumber/LibrerieCucumber/ci-environment-9.1.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/giovi/Desktop/DiaDiaCucumber/LibrerieCucumber/cucumber-core-7.6.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/giovi/Desktop/DiaDiaCucumber/LibrerieCucumber/cucumber-expressions-16.0.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/giovi/Desktop/DiaDiaCucumber/LibrerieCucumber/cucumber-gherkin-7.6.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/giovi/Desktop/DiaDiaCucumber/LibrerieCucumber/cucumber-gherkin-messages-7.6.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/giovi/Desktop/DiaDiaCucumber/LibrerieCucumber/cucumber-java-7.6.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/giovi/Desktop/DiaDiaCucumber/LibrerieCucumber/cucumber-plugin-7.6.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/giovi/Desktop/DiaDiaCucumber/LibrerieCucumber/datatable-7.6.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/giovi/Desktop/DiaDiaCucumber/LibrerieCucumber/docstring-7.6.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/giovi/Desktop/DiaDiaCucumber/LibrerieCucumber/gherkin-24.0.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/giovi/Desktop/DiaDiaCucumber/LibrerieCucumber/html-formatter-20.0.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/giovi/Desktop/DiaDiaCucumber/LibrerieCucumber/messages-19.0.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/giovi/Desktop/DiaDiaCucumber/LibrerieCucumber/tag-expressions-4.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/COMPUTER/Desktop/POO/LibrerieCucumber/apiguardian-api-1.1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/COMPUTER/Desktop/POO/LibrerieCucumber/ci-environment-9.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/COMPUTER/Desktop/POO/LibrerieCucumber/cucumber-core-7.6.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/COMPUTER/Desktop/POO/LibrerieCucumber/cucumber-expressions-16.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/COMPUTER/Desktop/POO/LibrerieCucumber/cucumber-gherkin-7.6.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/COMPUTER/Desktop/POO/LibrerieCucumber/cucumber-gherkin-messages-7.6.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/COMPUTER/Desktop/POO/LibrerieCucumber/cucumber-java-7.6.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/COMPUTER/Desktop/POO/LibrerieCucumber/cucumber-plugin-7.6.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/COMPUTER/Desktop/POO/LibrerieCucumber/datatable-7.6.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/COMPUTER/Desktop/POO/LibrerieCucumber/docstring-7.6.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/COMPUTER/Desktop/POO/LibrerieCucumber/gherkin-24.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/COMPUTER/Desktop/POO/LibrerieCucumber/html-formatter-20.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/COMPUTER/Desktop/POO/LibrerieCucumber/messages-19.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/COMPUTER/Desktop/POO/LibrerieCucumber/tag-expressions-4.1.0.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Homework2WIP"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
