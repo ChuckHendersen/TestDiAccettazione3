@@ -3,6 +3,8 @@ package main;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Controllore {
 
@@ -78,32 +80,57 @@ public class Controllore {
 
 	@SuppressWarnings("unused")
 	public boolean testDiUnitaLabirintoBuilder() {
-		Object labBuilderObj = null;
 		Class<?> labBuilderClass = null;
 		try {
 			labBuilderClass=Class.forName("it.uniroma3.diadia.ambienti.LabirintoBuilder");
 			Constructor<?> costruttoreLabBuilder = null;
 			costruttoreLabBuilder = labBuilderClass.getConstructor();
-			labBuilderObj=costruttoreLabBuilder.newInstance();
+			//Utilizziamo questa mappa per facilitare l'accesso ai metodi nei test
+			Map<String,Method> mappaMetodi = new HashMap<>();
 			Method addStanzaIniziale = labBuilderClass.getMethod("addStanzaIniziale",String.class);
-			Method addStanzaVincente = labBuilderClass.getMethod("addStanzaVincente",String.class);
-			Method addStanza = labBuilderClass.getMethod("addStanza",String.class);
-			Method addStanzaMagica = labBuilderClass.getMethod("addStanzaMagica", String.class,int.class);
-			Method addStanzaBloccata = labBuilderClass.getMethod("addStanzaBloccata", String.class, String.class, String.class);
-			Method addStanzaBuia = labBuilderClass.getMethod("addStanzaBuia", String.class, String.class);
-			Method addAdiacenza = labBuilderClass.getMethod("addAdiacenza",String.class,String.class,String.class);
-			Method addAttrezzo = labBuilderClass.getMethod("addAttrezzo",String.class,int.class);
-			Method getLabirinto = labBuilderClass.getMethod("getLabirinto");
+			mappaMetodi.put("addStanzaIniziale", addStanzaIniziale);
 			
+ 			Method addStanzaVincente = labBuilderClass.getMethod("addStanzaVincente",String.class);
+ 			mappaMetodi.put("addStanzaVincente", addStanzaVincente);
+ 			
+			Method addStanza = labBuilderClass.getMethod("addStanza",String.class);
+			mappaMetodi.put("addStanza", addStanza);
+			
+			Method addStanzaMagica = labBuilderClass.getMethod("addStanzaMagica", String.class,int.class);
+			mappaMetodi.put("addStanzaMagica", addStanzaMagica);
+			
+			Method addStanzaBloccata = labBuilderClass.getMethod("addStanzaBloccata", String.class, String.class, String.class);
+			mappaMetodi.put("addStanzaBloccata", addStanzaBloccata);
+			
+			Method addStanzaBuia = labBuilderClass.getMethod("addStanzaBuia", String.class, String.class);
+			mappaMetodi.put("addStanzaBuia",addStanzaBuia);
+			
+			Method addAdiacenza = labBuilderClass.getMethod("addAdiacenza",String.class,String.class,String.class);
+			mappaMetodi.put("addAdiacenza", addAdiacenza);
+			
+			Method addAttrezzo = labBuilderClass.getMethod("addAttrezzo",String.class,int.class);
+			mappaMetodi.put("addAttrezzo", addAttrezzo);
+			
+			Method getLabirinto = labBuilderClass.getMethod("getLabirinto");
+			mappaMetodi.put("getLabirinto", getLabirinto);
+			//Si inseriscono i metodi in un array per facilitare l'utilizzo di essi in altri metodi
 			//CONVERTIRE I TEST DI UNITA'
+			testMonolocale(costruttoreLabBuilder,mappaMetodi);
+			
 		} catch (ClassNotFoundException | NoSuchMethodException | SecurityException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
 			e.printStackTrace();
-			System.out.println("Test di unità per LabirintoBuilder non eseguiti con successo.");
+			System.out.println("Test di unità per LabirintoBuilder non superati con successo.");
 			System.out.println("Assicurarsi dell'esistenza della classe LabirintoBuilder e che i suoi metodi siano chiamati appropriatamente.");
 			return false;
 		}
 		return true;
 	}
-
+	
+	private void testMonolocale(Constructor<?> cnstrLabBuilder,Map<String,Method> metodiLabBuilder) throws InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
+		Object labBuilderObj = null;
+		labBuilderObj = cnstrLabBuilder.newInstance();
+		metodiLabBuilder.get("addStanzaIniziale").invoke(labBuilderObj,"Stanza 1");
+	}
+	
 }
 
