@@ -8,8 +8,9 @@ import java.lang.reflect.Method;
 import java.util.LinkedList;
 import java.util.List;
 
-import io.cucumber.java.en.*;
 import it.uniroma3.diadia.*;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 
 /**
  * Classe adibita alla definizione degli step definiti nel feature file "primeStampe.feature"
@@ -30,6 +31,8 @@ public class StepDefinitions {
 			"o regalarli se pensi che possano ingraziarti qualcuno.\n\n"+
 			"Per conoscere le istruzioni usa il comando 'aiuto'.";
 
+	static final private String MESSAGGIO_VITTORIA ="Hai vinto!";
+	
 	static final private String MESSAGGIO_ARRIVEDERCI = "Grazie di aver giocato!";
 
 	private String stringaDiBenvenuto;
@@ -98,7 +101,20 @@ public class StepDefinitions {
 		assertNotNull(stringaDiBenvenuto);
 		//Come posso verificare che effetivamente nello STDOUT appaia la stringa?
 	}
-
+	
+	@Then("hai vinto la partita")
+	public void hai_vinto_la_partita() {
+		//Dovrebbe contenere la stringa di benvenuto e quella di arrivederci
+		if(ioSim.getOutputList().get(ioSim.getOutputList().size()-1).contains(MESSAGGIO_VITTORIA)) {
+			//esiste la stringa di benvenuto all'interno dell stampe di gioco
+			assertTrue(true);
+			return;
+		}
+		System.out.println(corniciatore("ERRORE! La partita non va a buon fine."));
+		assertTrue(false);
+	}
+	
+	
 	@Then("il gioco stampa un messaggio di arrivederci")
 	public void il_gioco_stampa_un_messaggio_di_arrivederci() {
 		//Dovrebbe contenere la stringa di benvenuto e quella di arrivederci
@@ -289,4 +305,61 @@ public class StepDefinitions {
 		}
 	}
 
+	@SuppressWarnings("unused")
+	@Given("carico un labirinto completo per testare una partita")
+	public void carico_un_labirinto_completo_per_testare_una_partita(){
+		Object labBuilderObj = null;
+		try {
+			Class<?> labBuilderClass = null;
+			labBuilderClass=Class.forName("it.uniroma3.diadia.ambienti.LabirintoBuilder");
+			Constructor<?> costruttoreLabBuilder = null;
+			costruttoreLabBuilder = labBuilderClass.getConstructor();
+			labBuilderObj=costruttoreLabBuilder.newInstance();
+			Method addStanzaIniziale = labBuilderClass.getMethod("addStanzaIniziale",String.class);
+			Method addStanzaVincente = labBuilderClass.getMethod("addStanzaVincente",String.class);
+			Method addStanza = labBuilderClass.getMethod("addStanza",String.class);
+			Method addStanzaMagica = labBuilderClass.getMethod("addStanzaMagica", String.class,int.class);
+			Method addStanzaBloccata = labBuilderClass.getMethod("addStanzaBloccata", String.class, String.class, String.class);
+			Method addStanzaBuia = labBuilderClass.getMethod("addStanzaBuia", String.class, String.class);
+			Method addAdiacenza = labBuilderClass.getMethod("addAdiacenza",String.class,String.class,String.class);
+			Method addAttrezzo = labBuilderClass.getMethod("addAttrezzo",String.class,int.class);
+			Method getLabirinto = labBuilderClass.getMethod("getLabirinto");
+			
+
+			addStanzaIniziale.invoke(labBuilderObj,"stanza iniziale");
+			addAttrezzo.invoke(labBuilderObj, "aicrot", 2);
+			addStanzaVincente.invoke(labBuilderObj,"stanza vincente");
+			addStanzaBloccata.invoke(labBuilderObj, "stanza bloccata", "ovest","chiave");
+			addStanzaBuia.invoke(labBuilderObj, "stanza buia", "torcia");
+			addAttrezzo.invoke(labBuilderObj, "chiave", 2);
+			addStanzaMagica.invoke(labBuilderObj, "stanza magica", 2);
+			addAdiacenza.invoke(labBuilderObj, "stanza iniziale", "stanza buia", "est");
+			addAdiacenza.invoke(labBuilderObj, "stanza buia", "stanza iniziale", "ovest");
+			addAdiacenza.invoke(labBuilderObj, "stanza iniziale", "stanza magica", "sud");
+			addAdiacenza.invoke(labBuilderObj, "stanza magica", "stanza iniziale", "nord");
+			addAdiacenza.invoke(labBuilderObj, "stanza iniziale", "stanza bloccata", "nord");
+			addAdiacenza.invoke(labBuilderObj, "stanza bloccata", "stanza iniziale", "sud");
+			addAdiacenza.invoke(labBuilderObj, "stanza bloccata", "stanza vincente", "ovest");
+			addAdiacenza.invoke(labBuilderObj, "stanza vincente", "stanza bloccata", "est");
+			
+			this.threadDiGioco = new Thread(new RunnableDiaDia(ioSim,getLabirinto.invoke(labBuilderObj)));
+		} catch (ClassNotFoundException e) {
+			System.out.println(corniciatore("ERRORE! Non e' possibile costruire un labirinto\n"
+					+ "Possibile causa:\n"
+					+ "Labirinto builder non esiste come classe."));
+			e.printStackTrace();
+		} catch (NoSuchMethodException e) {
+			e.printStackTrace();
+		} catch (SecurityException e) {
+			e.printStackTrace();
+		} catch (InstantiationException e) {
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			e.printStackTrace();
+		} catch (InvocationTargetException e) {
+			e.printStackTrace();
+		}
+	}
 }

@@ -119,7 +119,7 @@ public class Controllore {
 			//CONVERTIRE I TEST DI UNITA'
 //			testMonolocale(costruttoreLabBuilder,mappaMetodi);
 			
-		} catch (ClassNotFoundException | NoSuchMethodException | SecurityException | IllegalArgumentException | InvocationTargetException e) {
+		} catch (ClassNotFoundException | NoSuchMethodException | SecurityException | IllegalArgumentException e) {
 			e.printStackTrace();
 			System.out.println("Test di unità per LabirintoBuilder non superati con successo.");
 			System.out.println("Assicurarsi dell'esistenza della classe LabirintoBuilder e che i suoi metodi siano chiamati appropriatamente.");
