@@ -78,6 +78,8 @@ public class Controllore {
 		}	
 	}
 
+	
+	//NON IMPLEMENTABILE CON RIFLESSIONE ???
 	@SuppressWarnings("unused")
 	public boolean testDiUnitaLabirintoBuilder() {
 		Class<?> labBuilderClass = null;
@@ -115,9 +117,9 @@ public class Controllore {
 			mappaMetodi.put("getLabirinto", getLabirinto);
 			//Si inseriscono i metodi in un array per facilitare l'utilizzo di essi in altri metodi
 			//CONVERTIRE I TEST DI UNITA'
-			testMonolocale(costruttoreLabBuilder,mappaMetodi);
+//			testMonolocale(costruttoreLabBuilder,mappaMetodi);
 			
-		} catch (ClassNotFoundException | NoSuchMethodException | SecurityException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+		} catch (ClassNotFoundException | NoSuchMethodException | SecurityException | IllegalArgumentException | InvocationTargetException e) {
 			e.printStackTrace();
 			System.out.println("Test di unità per LabirintoBuilder non superati con successo.");
 			System.out.println("Assicurarsi dell'esistenza della classe LabirintoBuilder e che i suoi metodi siano chiamati appropriatamente.");
@@ -126,11 +128,11 @@ public class Controllore {
 		return true;
 	}
 	
-	private void testMonolocale(Constructor<?> cnstrLabBuilder,Map<String,Method> metodiLabBuilder) throws InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
-		Object labBuilderObj = null;
-		labBuilderObj = cnstrLabBuilder.newInstance();
-		metodiLabBuilder.get("addStanzaIniziale").invoke(labBuilderObj,"Stanza 1");
-	}
+//	private void testMonolocale(Constructor<?> cnstrLabBuilder,Map<String,Method> metodiLabBuilder) throws InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
+//		Object labBuilderObj = null;
+//		labBuilderObj = cnstrLabBuilder.newInstance();
+//		metodiLabBuilder.get("addStanzaIniziale").invoke(labBuilderObj,"Stanza 1");
+//	}
 	
 }
 
