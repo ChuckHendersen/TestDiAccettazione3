@@ -32,6 +32,5 @@
 	<classpathentry kind="lib" path="C:/Users/giovi/Desktop/DiaDiaCucumber/LibrerieCucumber/html-formatter-20.0.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/giovi/Desktop/DiaDiaCucumber/LibrerieCucumber/messages-19.0.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/giovi/Desktop/DiaDiaCucumber/LibrerieCucumber/tag-expressions-4.1.0.jar"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/DiaDia3"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

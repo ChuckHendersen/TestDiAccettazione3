@@ -8,4 +8,5 @@ Feature: Iniezioni di labirinto
    	And carico il comando "guarda"
    	And il gioco e stato avviato
    	Then verifico lo spostamento da "Stanza Iniziale" a "Stanza Vincente" verso "nord"
-  	Then il gioco si chiude
+  	And hai vinto la partita
+  	And il gioco si chiude
