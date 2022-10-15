@@ -3,13 +3,6 @@ package main;
 public class Starter {
 
 	public static void main(String[] args) throws Throwable {
-		//Controlla cosa è presente nel classpath
-		
-//		ClassLoader cl = ClassLoader.getSystemClassLoader();
-//        URL[] urls = ((URLClassLoader)cl).getURLs();
-//        for(URL url: urls){
-//        	System.out.println(url.getFile());
-//        }
 		System.out.println("Test preliminari in avvio...");
 		Controllore c = new Controllore();
 		if(c.controlliPrimaDellaConsegna()){
