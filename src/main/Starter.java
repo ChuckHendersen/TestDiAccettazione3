@@ -18,8 +18,8 @@ public class Starter {
 			io.cucumber.core.cli.Main.main(new String[]{"-g", "classpath:"});
 		}else{
 			System.out.println("ATTENZIONE! uno o piu' dei controlli prima della consegna "
-					+ "non e' andato a buon fine.\nAssicurarsi di aver posizionato il proprio DiaDia.jar"
-					+ "nella cartella corretta e di correggere gli errore\nin caso vengano menzionati.\nBuon lavoro!");
+					+ "non e' andato a buon fine,\nsistemare gli errori prima di poter avviare "
+					+ "i test di accettazione. Buon lavoro!");
 		}
 		System.out.println("Chiusura programma.");
 	} 
