@@ -47,6 +47,7 @@ public class StepDefinitions {
 	private Object labBuilderObj=null;
 	private Method addStanzaIniziale;
 	private Method addStanzaVincente;
+	@SuppressWarnings("unused")
 	private Method addStanza;
 	private Method addStanzaMagica;
 	private Method addStanzaBloccata;
@@ -302,7 +303,6 @@ public class StepDefinitions {
 		assertTrue(trovataParolaChiave);
 	}
 
-	@SuppressWarnings("unused")
 	@Given("carico un bilocale composto da {string} collegata a {string} alla {string}")
 	public void carico_un_bilocale_composto_da_collegata_a_alla(String stanzaOrigine, String direzione, String stanzaDestinazione){
 		try {
@@ -317,7 +317,6 @@ public class StepDefinitions {
 			e.printStackTrace();
 		}
 	}
-	@SuppressWarnings("unused")
 	@Given("carico un labirinto completo per testare una partita")
 	public void carico_un_labirinto_completo_per_testare_una_partita(){
 		try {
