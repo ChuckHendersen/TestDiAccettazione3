@@ -3,28 +3,28 @@ Feature: partita completa HW3
   @testBuilder
   Scenario: Labirinto bilocale
   	Given carico un labirinto completo per testare una partita
-  	Given carico il comando "guarda"
-  	And carico il comando "prendi aicrot"
-   	And carico il comando "vai est"
-   	And carico il comando "guarda"
-   	And carico il comando "vai ovest"
-   	And carico il comando "vai nord"
-   	And carico il comando "guarda"
-   	And carico il comando "vai sud"
-   	And carico il comando "vai sud"
-   	And carico il comando "posa aicrot"
-   	And carico il comando "prendi aicrot"
-   	And carico il comando "posa aicrot"
-   	And carico il comando "prendi aicrot"
-   	And carico il comando "posa aicrot"
-   	And carico il comando "prendi torcia"
-   	And carico il comando "vai nord"
-   	And carico il comando "vai est"
-   	And carico il comando "posa torcia"
-   	And carico il comando "prendi chiave"
-   	And carico il comando "vai ovest"
-   	And carico il comando "vai nord"
-   	And carico il comando "posa chiave"
-   	And carico il comando "vai ovest"
-   	And il gioco e stato avviato
+  	Given inserisco il comando "guarda" in coda
+  	And inserisco il comando "prendi aicrot" in coda
+   	And inserisco il comando "vai est" in coda
+   	And inserisco il comando "guarda" in coda
+   	And inserisco il comando "vai ovest" in coda
+   	And inserisco il comando "vai nord" in coda
+   	And inserisco il comando "guarda" in coda
+   	And inserisco il comando "vai sud" in coda
+   	And inserisco il comando "vai sud" in coda
+   	And inserisco il comando "posa aicrot" in coda
+   	And inserisco il comando "prendi aicrot" in coda
+   	And inserisco il comando "posa aicrot" in coda
+   	And inserisco il comando "prendi aicrot" in coda
+   	And inserisco il comando "posa aicrot" in coda
+   	And inserisco il comando "prendi torcia" in coda
+   	And inserisco il comando "vai nord" in coda
+   	And inserisco il comando "vai est" in coda
+   	And inserisco il comando "posa torcia" in coda
+   	And inserisco il comando "prendi chiave" in coda
+   	And inserisco il comando "vai ovest" in coda
+   	And inserisco il comando "vai nord" in coda
+   	And inserisco il comando "posa chiave" in coda
+   	And inserisco il comando "vai ovest" in coda
+   	And il gioco viene avviato
    	Then hai vinto la partita
